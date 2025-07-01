@@ -1,3 +1,5 @@
+package common;
+
 public class Car implements Comparable<Car> {
     private String vin;
     private String model;
@@ -5,14 +7,20 @@ public class Car implements Comparable<Car> {
     private int year;
     private int mileage;
     private double price;
+    private CarType type;
 
-    public Car(String vin, String model, String company, int year, int mileage, double price) {
+    public Car(String vin, String model, String company, int year, int mileage, double price, CarType type) {
         this.vin = vin;
         this.model = model;
         this.company = company;
         this.year = year;
         this.mileage = mileage;
         this.price = price;
+        this.type = type;
+    }
+
+    public Car(String vin, String model, String company, int year, int mileage, double price) {
+        this(vin, model, company, year, mileage, price, null);
     }
 
     public String getVin() {
@@ -39,6 +47,10 @@ public class Car implements Comparable<Car> {
         return price;
     }
 
+    public CarType getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -59,13 +71,14 @@ public class Car implements Comparable<Car> {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "common.Car{" +
                 "vin='" + vin + '\'' +
                 ", model='" + model + '\'' +
                 ", company='" + company + '\'' +
                 ", year=" + year +
                 ", mileage=" + mileage +
                 ", price=" + price +
+                ", type=" + type +
                 '}';
     }
 }

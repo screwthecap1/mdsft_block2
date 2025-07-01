@@ -1,3 +1,7 @@
+package Task3;
+
+import common.Car;
+
 import java.util.*;
 
 public class CarTask {
